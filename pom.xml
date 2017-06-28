@@ -8,8 +8,11 @@
     <artifactId>faqsetup</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
+        <capco.java.version>1.8</capco.java.version>
+
         <capco.poi.version>3.16</capco.poi.version>
         <capco.slf.version>1.7.25</capco.slf.version>
+        <capco.compiler.plugin.version>3.6.1</capco.compiler.plugin.version>
     </properties>
 
     <dependencies>
@@ -35,6 +38,15 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${capco.compiler.plugin.version}</version>
+                <configuration>
+                    <source>${capco.java.version}</source>
+                    <target>${capco.java.version}</target>
+                </configuration>
+            </plugin>
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <configuration>
